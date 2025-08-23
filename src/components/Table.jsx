@@ -50,7 +50,10 @@ useEffect(()=>{
                 <td className="px-4 py-3 whitespace-nowrap text-gray-700">
                   {dd.investment}
                 </td>
-                <td><button className='bg-blue-600 text-white py-2 px-4 rounded-xl '>EDIT</button></td>
+                <td className='flex my-1 gap-5 '>
+                  <button className='bg-blue-600 text-white py-2 px-4 rounded-xl '>EDIT</button>
+                  <button className='bg-red-600 text-white py-2 px-4 rounded-xl '>DELETE</button>
+                  </td>
               </tr>
             ))}
     </tbody>
