@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { GiTakeMyMoney } from "react-icons/gi";
 import { FaArrowTrendDown } from "react-icons/fa6";
@@ -8,12 +8,17 @@ export const Home = () => {
 
  const[expense,setExpense] = useState([]);
 
- try {
+ const fetchdata = () => {
+  try {
    axios.get('https://myyys.onrender.com/display/new').then((res)=>setExpense(res.data))
  } catch (error) {
   console.log(error)
  }
+ }
 
+ useEffect(()=>{
+  fetchdata()
+ })
 
   return (
     <div>
