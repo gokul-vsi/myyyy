@@ -1,82 +1,29 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import Modal from './Modal';
+import React, { useState } from 'react';
 
-export const Table = () => {
+const Modal = ({onFresh}) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-const [isOpen, setIsOpen] = useState(false);
-const [itemToDelete, setItemToDelete] = useState(null);
-
-  const openModal = (id) => {
-  setItemToDelete(id);
-  setIsOpen(true);
-}
+  const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
- 
-const[alldata,setAlldata] = useState([]);
 
-const fetchalldata = () => {
-    try {
-   axios.get('https://myy-s.onrender.com/display/alldatas').then((res)=>setAlldata(res.data))
- } catch (error) {
-  console.log(error)
- }
- }
+  const Delete = () => {
 
-useEffect(()=>{
-  fetchalldata()
-},[])
+   
 
-
-const handleDelete = async () => {
-  if (itemToDelete) {
-    await axios.delete(`https://myy-s.onrender.com/display/alldatas/${itemToDelete}`);
-    setIsOpen(false);
-    setItemToDelete(null); // Reset after deletion
-    fetchalldata();
-  }
-}
-
-
+  };
 
   return (
-    <div> <div className="overflow-x-auto my-20 mx-30 ">
-  <table className="min-w-full divide-y-2 divide-gray-200">
-    <thead className="ltr:text-left rtl:text-right">
-      <tr className="*:font-medium *:text-gray-900">
-        <th className="px-3 py-2 whitespace-nowrap">INCOME</th>
-        <th className="px-3 py-2 whitespace-nowrap">DATE</th>
-        <th className="px-3 py-2 whitespace-nowrap">EXPENSE</th>
-        <th className="px-3 py-2 whitespace-nowrap">INVESTMENT</th>
-        <th className="px-3 py-2 whitespace-nowrap">Action</th>
-      </tr>
-    </thead>
-
- <tbody className="divide-y divide-gray-200">
-      {alldata.map((dd, index) => (
-              <tr key={index} className="hover:bg-gray-50 transition-colors">
-                <td className="px-4 py-3 whitespace-nowrap font-medium text-gray-900">
-                  {dd.income}
-                </td>
-                <td className="px-4 py-3 whitespace-nowrap text-gray-700">
-                  1/1/1999
-                </td>
-                <td className="px-4 py-3 whitespace-nowrap text-gray-700">
-                  {dd.expense}
-                </td>
-                <td className="px-4 py-3 whitespace-nowrap text-gray-700">
-                  {dd.investment}
-                </td>
-                <td className='  my-1  '>
-                  <button 
-        onClick={()=>openModal(dd._id)} 
+    <div>
+      <button 
+        onClick={openModal} 
         className='bg-red-600 text-white py-2 px-4 rounded-xl hover:bg-red-700 transition-colors'
         type="button"
       >
         DELETE
       </button>
+
       {/* Modal backdrop */}
-       {isOpen && (
+      {isOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-40 flex justify-center items-center p-4">
           {/* Modal container */}
           <div className="relative bg-white rounded-lg shadow-lg max-w-md w-full max-h-full overflow-y-auto">
@@ -99,7 +46,7 @@ const handleDelete = async () => {
               </svg>
               <h3 className="mb-5 text-lg font-normal text-gray-500">Are you sure you want to delete this product?</h3>
               <button 
-                onClick={handleDelete}
+                onClick={Delete}
                 type="button" 
                 className="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-3"
               >
@@ -116,16 +63,8 @@ const handleDelete = async () => {
           </div>
         </div>
       )}
-                  </td>
-              </tr>
-            ))}
-    </tbody>
-  </table>
-      
-  
-</div>
+    </div>
+  );
+};
 
-  
- </div>
-  )
-}
+export default Modal;

@@ -10,7 +10,7 @@ export const Home = () => {
 
  const fetchdata = () => {
   try {
-   axios.get('https://myyys.onrender.com/display/new').then((res)=>setExpense(res.data))
+   axios.get('https://myy-s.onrender.com/display/newone').then((res)=>setExpense(res.data))
  } catch (error) {
   console.log(error)
  }
@@ -18,7 +18,7 @@ export const Home = () => {
 
  useEffect(()=>{
   fetchdata()
- })
+ },[])
 
   return (
     <div>
