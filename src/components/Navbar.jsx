@@ -6,8 +6,8 @@ export const Navbar = () => {
   return (
     <div>
          <div>
-       <header className="bg-white">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+       <header className="bg-white ">
+      <div className="mx-auto max-w-screen-xl px-4  sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
             <a className="block  md:mt-4  text-3xl bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text font-bold " href="#">
@@ -18,10 +18,10 @@ export const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <nav aria-label="Global">
-              <ul className="flex lg:me-10 items-center font-medium md:mt-6 gap-6 text-lg">
+              <ul className="flex lg:me-10 items-center  md:mt-6 gap-6 ">
                 {["Home","Table"].map((item) => (
                   <li key={item}>
-                    <Link className="nav-des text-base font-medium border border-transparent hover:border-b-blue-500 hover:scale-110    hover:text-blue-500 transition-all duration-500  " to={item === "Home" ? "/" : `/${item.toLowerCase()}`} >
+                    <Link className="nav-des text-base font-medium  border-b  border-b-lime-400    hover:text-lime-400 transition-all duration-500 hover:border-b-transparent " to={item === "Home" ? "/" : `/${item.toLowerCase()}`} >
                       {item}
                     </Link>
                     
@@ -33,7 +33,7 @@ export const Navbar = () => {
 
           <div className="flex items-center  md:mt-6 gap-4">
             <div className="sm:flex sm:gap-4">
-              <a className="rounded-md hidden md:block  bg-blue-500 px-5 py-2.5 text-sm font-medium text-white shadow-sm border border-transparent hover:bg-white hover:text-black hover:border-blue-500 " href="#">
+              <a className="rounded-md hidden md:block  bg-fuchsia-400 px-5 py-2.5 text-sm font-medium text-white shadow-sm border border-transparent hover:bg-white hover:text-black hover:border-fuchsia-400 " href="#">
                 Login
               </a>
 
