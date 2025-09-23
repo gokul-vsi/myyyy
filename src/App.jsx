@@ -6,6 +6,7 @@ import './App.css'
 import { Home } from './components/Home'
 import { Table } from './components/Table'
 import { Navbar } from './components/Navbar'
+import { Form } from './components/Form'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
          <Routes>
           <Route path='/' element={<Home/>}></Route>
           <Route path='/table' element={<Table/>}></Route>
+          <Route path='/form' element={<Form/>}></Route>
          </Routes>
       </BrowserRouter>
     </>

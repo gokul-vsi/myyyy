@@ -61,7 +61,7 @@ const handleDelete = async () => {
                   {dd.income}
                 </td>
                 <td className="px-4 py-3 whitespace-nowrap text-gray-700">
-                  1/1/1999
+                 {dd.date}
                 </td>
                 <td className="px-4 py-3 whitespace-nowrap text-gray-700">
                   {dd.expense}

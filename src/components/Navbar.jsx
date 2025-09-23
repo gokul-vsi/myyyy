@@ -19,7 +19,7 @@ export const Navbar = () => {
           <div className="hidden md:block">
             <nav aria-label="Global">
               <ul className="flex lg:me-10 items-center  md:mt-6 gap-6 ">
-                {["Home","Table"].map((item) => (
+                {["Home","Table","Form"].map((item) => (
                   <li key={item}>
                     <Link className="nav-des text-base font-medium  border-b  border-b-lime-400    hover:text-lime-400 transition-all duration-500 hover:border-b-transparent " to={item === "Home" ? "/" : `/${item.toLowerCase()}`} >
                       {item}
@@ -66,7 +66,7 @@ export const Navbar = () => {
         {isOpen && (
           <nav className="md:hidden">
             <ul className="mt-4 space-y-2 text-center">
-              {["Home","Table"].map((item) => (
+              {["Home","Table","Form"].map((item) => (
                 <li key={item}>
                   <Link
                     className="block text-gray-500 transition hover:text-gray-700"

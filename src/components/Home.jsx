@@ -6,11 +6,11 @@ import { FaArrowTrendUp } from "react-icons/fa6";
 import { Pie } from './Pie';
 export const Home = () => {
 
- const[expense,setExpense] = useState([]);
+ const[expenses,setExpenses] = useState([]);
 
  const fetchdata = () => {
   try {
-   axios.get('https://myy-s.onrender.com/display/newone').then((res)=>setExpense(res.data))
+   axios.get('https://myy-s.onrender.com/display/newone').then((res)=>setExpenses(res.data))
  } catch (error) {
   console.log(error)
  }
@@ -30,7 +30,7 @@ export const Home = () => {
               <GiTakeMyMoney  className=' text-2xl font-bold mt-1' />
             </div>
             <div>
-              <h1 className='font-bold text-xl '>{expense.income}</h1>
+              <h1 className='font-bold text-xl '>{expenses.income}</h1>
             </div>
            </div>
         </div>
@@ -41,7 +41,7 @@ export const Home = () => {
               <FaArrowTrendDown  className=' text-2xl font-bold mt-1' />
             </div>
             <div>
-              <h1 className='font-bold text-xl '>{expense.expense}</h1>
+              <h1 className='font-bold text-xl '>{expenses.expense}</h1>
             </div>
            </div>
         </div>
@@ -52,13 +52,13 @@ export const Home = () => {
               <FaArrowTrendUp  className=' text-2xl font-bold mt-1' />
             </div>
             <div>
-              <h1 className='font-bold text-xl '>{expense.investment}</h1>
+              <h1 className='font-bold text-xl '>{expenses.investment}</h1>
             </div>
            </div>
         </div>
       </div>
       <div className="flex justify-center my-20 items-center">
-        <Pie a={expense.income} b={expense.expense} c={expense.investment} />
+        <Pie a={expenses.income} b={expenses.expense} c={expenses.investment} />
       </div>
     </div>
   )
