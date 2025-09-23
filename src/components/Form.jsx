@@ -22,9 +22,9 @@ const handleSubmit = async(e)=>{
 
   return (
     <div>
-        <form onSubmit={handleSubmit} className="container mx-2  md:mx-8">
+        <form onSubmit={handleSubmit} className="container   md:mx-8">
             <ToastContainer position="top-right" />
-            <div className="grid grid-cols-1   mt-5 md:my-20 gap-5 md:grid-cols-4 ">
+            <div className="grid grid-cols-2  mt-28   md:my-20 gap-5 md:grid-cols-4 ">
                <div className="div1">
                  <input type="text" placeholder="Income" required onChange={(e)=>setIncome(e.target.value)} class="block  mt-2 w-full placeholder-black rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
                </div>
@@ -38,7 +38,7 @@ const handleSubmit = async(e)=>{
                 <div>
     
 
-    <input type="date" placeholder="John Doe" required onChange={(e)=>setDate(e.target.value)} class="block  mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
+    <input type="date" placeholder="Date" required onChange={(e)=>setDate(e.target.value)} class="block  mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
 </div>
                </div>
             </div>
