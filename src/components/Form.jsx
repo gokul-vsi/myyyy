@@ -26,19 +26,19 @@ const handleSubmit = async(e)=>{
             <ToastContainer position="top-right" />
             <div className="grid grid-cols-1   mt-5 md:my-20 gap-5 md:grid-cols-4 ">
                <div className="div1">
-                 <input type="text" placeholder="Income" onChange={(e)=>setIncome(e.target.value)} class="block  mt-2 w-full placeholder-black rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
+                 <input type="text" placeholder="Income" required onChange={(e)=>setIncome(e.target.value)} class="block  mt-2 w-full placeholder-black rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
                </div>
                <div className="div2">
-                 <input type="text" placeholder="Expense" onChange={(e)=>setExpense(e.target.value)} class="block  mt-2 w-full placeholder-black  rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
+                 <input type="text" placeholder="Expense" required onChange={(e)=>setExpense(e.target.value)} class="block  mt-2 w-full placeholder-black  rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
                </div>
                <div className="div3">
-                 <input type="text" placeholder="Investment" onChange={(e)=>setInvestment(e.target.value)} class="block  mt-2 w-full placeholder-black rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
+                 <input type="text" placeholder="Investment" required onChange={(e)=>setInvestment(e.target.value)} class="block  mt-2 w-full placeholder-black rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
                </div>
                <div className="div4">
                 <div>
     
 
-    <input type="date" placeholder="John Doe" onChange={(e)=>setDate(e.target.value)} class="block  mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
+    <input type="date" placeholder="John Doe" required onChange={(e)=>setDate(e.target.value)} class="block  mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
 </div>
                </div>
             </div>
