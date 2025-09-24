@@ -27,7 +27,7 @@ const handleSubmit = async(e)=>{
 
   return (
     <div>
-        <form onSubmit={handleSubmit} className="container   md:mx-8">
+        <form onSubmit={handleSubmit} className="container mx-auto p-5  md:mx-8">
             <ToastContainer position="top-right" />
             <div className="grid grid-cols-2  mt-28   md:my-20 gap-5 md:grid-cols-4 ">
                <div className="div1">
