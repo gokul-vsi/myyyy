@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import confetti from 'canvas-confetti'
 import { ToastContainer, toast } from 'react-toastify';
 
 export const Form = () => {
@@ -14,6 +15,10 @@ const handleSubmit = async(e)=>{
     const alldata = {income,expense,investment,date}
     try {
         await axios.post('https://myy-s.onrender.com/display',alldata)
+        confetti({
+          particleCount:200,
+          spread:150,
+        })
         toast.success("Added Successfully")
     } catch (error) {
         console.log(error)
@@ -43,7 +48,7 @@ const handleSubmit = async(e)=>{
                </div>
             </div>
             <div className="button flex justify-center items-center">
-                <input type="submit"  value="Submit" className='bg-blue-500 border mt-5 md:mt-0 text-white p-2 px-5 rounded-lg hover:cursor-pointer'  />
+                <input type="submit"  value="Submit" className='bg-blue-500 border mt-5 md:mt-0 text-white p-2 px-5 rounded-lg hover:cursor-pointer hover:bg-blue-600 hover:scale-110 transition-all ease-in-out '  />
             </div>
         </form>
     </div>
