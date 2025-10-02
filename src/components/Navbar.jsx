@@ -21,7 +21,7 @@ export const Navbar = () => {
               <ul className="flex lg:me-10 items-center  md:mt-6 gap-6 ">
                 {["Home","Table","Form"].map((item) => (
                   <li key={item}>
-                    <Link className="nav-des text-base font-medium  border-b  border-b-lime-400    hover:text-lime-400 transition-all duration-500 hover:border-b-transparent " to={item === "Home" ? "/" : `/${item.toLowerCase()}`} >
+                    <Link className="nav-des text-base font-medium  border-b  border-b-lime-400    hover:text-lime-400 transition-all duration-500 hover:border-b-transparent " to={item === "Login" ? "/" : `/${item.toLowerCase()}`} >
                       {item}
                     </Link>
                     
@@ -70,7 +70,7 @@ export const Navbar = () => {
                 <li key={item}>
                   <Link
                     className="block text-gray-500 transition hover:text-gray-700"
-                    to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                    to={item === "Login" ? "/" : `/${item.toLowerCase()}`}
                     onClick={() => setIsOpen(false)} // Close menu when clicking a link
                   >
                     {item}
