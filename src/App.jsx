@@ -17,7 +17,7 @@ const [showNavbar, setShowNavbar] = useState(true);
 
 
  useEffect(() => {
-    // Hide navbar on login page
+    
     if (location.pathname === '/') {
       setShowNavbar(false);
     } else {
