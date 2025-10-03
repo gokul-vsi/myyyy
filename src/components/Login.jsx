@@ -22,7 +22,6 @@ const handleSignin = async (e) => {
   
   try {
     await axios.post("https://mern-auth-coyx.onrender.com/api/login",alldata)
-    setLoading(false)
     navigate('/home')
     toast.success("Login Successfully")
   } catch (error) {
@@ -36,7 +35,9 @@ const handleSignin = async (e) => {
   else {
     toast.error("Something went wrong, try again later")
   }
-}
+} finally {
+    setLoading(false); // Always reset loading
+  }
 
 
 }
