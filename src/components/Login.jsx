@@ -7,6 +7,8 @@ export const Login = () => {
 
 const navigate = useNavigate()
 
+const[loading,setLoading] = useState(false);
+
 const[email,setEmail] = useState([]);
 const[password,setPassword] = useState([]);
 
@@ -14,7 +16,9 @@ const[password,setPassword] = useState([]);
 const handleSignin = async (e) => {
 
   e.preventDefault();
+  setLoading(true)
   const alldata = {email,password}
+
   
   try {
     await axios.post("https://mern-auth-coyx.onrender.com/api/login",alldata)
@@ -52,17 +56,17 @@ const handleSignin = async (e) => {
 
         
             <div className="w-full mt-4">
-                <input onChange={(e)=>setEmail(e.target.value)} className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300" type="email" placeholder="Email Address" aria-label="Email Address" />
+                <input onChange={(e)=>setEmail(e.target.value)} required className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300" type="input" placeholder="Email Address" aria-label="Email Address" />
             </div>
 
             <div className="w-full mt-4">
-                <input onChange={(e)=>setPassword(e.target.value)} className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300" type="password" placeholder="Password" aria-label="Password" />
+                <input onChange={(e)=>setPassword(e.target.value)} required className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300" type="password" placeholder="Password" aria-label="Password" />
             </div>
 
             <div className="flex items-center justify-center mt-4">
                 
 
-                <input type="submit" value="Sign In" className="px-6 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"/>
+                <button type="submit"  className="px-6 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">  {loading ? "Logging in..." : "Sign In" }   </button>
 
             </div>
         
